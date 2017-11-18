@@ -3,9 +3,6 @@ export const note = {
   controller($scope, $element, $document) {
     const element = $element;
 
-    const style = {
-      'z-index': 0
-    };
     // https://docs.angularjs.org/guide/directive
     let startX = 0;
     let startY = 0;
@@ -18,16 +15,13 @@ export const note = {
     });
 
     element.on('mousedown', event => {
-      style['z-index'] += 1;
-      $element.css(style);
+      // Notes do not know about each other - handle it higher
       $scope.$emit('note/clicked', {el: $element});
 
       // Prevent default dragging of selected content
       event.preventDefault();
       startX = event.pageX - x;
       startY = event.pageY - y;
-
-      // $log.log($element.style.zIndex);
 
       $document.on('mousemove', mousemove);
       $document.on('mouseup', mouseup);
