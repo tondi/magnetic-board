@@ -2,7 +2,7 @@ import angular from 'angular';
 
 import {login} from './app/components/login/login';
 import {board} from './app/components/board/board';
-import {note} from './app/shared/note/note';
+import {noteComponent} from './app/components/note/note.component';
 import 'angular-ui-router';
 import routesConfig from './routes';
 
@@ -14,4 +14,4 @@ angular
   .config(routesConfig)
   .component('login', login)
   .component('board', board)
-  .component('note', note);
+  .component('note', noteComponent);
