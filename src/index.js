@@ -7,7 +7,6 @@ import 'angular-ui-router';
 import routesConfig from './routes';
 
 import './index.scss';
-
 export const app = 'app';
 
 angular
