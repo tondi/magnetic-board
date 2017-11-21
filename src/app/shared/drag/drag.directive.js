@@ -1,15 +1,15 @@
 const dragDirective = () => {
   return {
-    controller: function ($scope, $element, $attrs) {
+    controller: ($scope, $element) => {
       $element.bind('touchstart', onTouchStart);
 
       function onTouchStart(event) {
-        var method = $element.attr('ng-touchstart');
+        const method = $element.attr('ng-touchstart');
         $scope.$event = event;
         $scope.$apply(method);
-      };
+      }
     }
-  }
+  };
 };
 
-export dragDirective;
+export {dragDirective};

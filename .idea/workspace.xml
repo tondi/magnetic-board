@@ -2,20 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cfe87612-b5a7-40dc-ac91-a359a8cba9c5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/components/note/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/components/note/note.component.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/components/note/note.controller.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/components/note/note.view.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/shared/drag.directive.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/shared/index.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/app/shared/note/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/app/shared/note/note.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/app/shared/note/note.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/app/shared/note/noteComponent.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/app/shared/note/noteController.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/app/shared/note/noteView.html" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/shared/drag.directive.js" afterPath="$PROJECT_DIR$/src/app/shared/drag/drag.directive.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/shared/index.js" afterPath="$PROJECT_DIR$/src/app/shared/drag/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/components/login/login.js" afterPath="$PROJECT_DIR$/src/app/components/login/login.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/components/note/note.component.js" afterPath="$PROJECT_DIR$/src/app/components/note/note.component.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/components/note/note.controller.js" afterPath="$PROJECT_DIR$/src/app/components/note/note.controller.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.js" afterPath="$PROJECT_DIR$/src/index.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -33,8 +24,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="16" column="34" lean-forward="false" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
+            <state relative-caret-position="540">
+              <caret line="18" column="30" lean-forward="false" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
               <folding>
                 <element signature="e#0#30#0" expanded="true" />
               </folding>
@@ -42,11 +33,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="note.component.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="note.component.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/app/components/note/note.component.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="246">
-              <caret line="6" column="28" lean-forward="true" selection-start-line="5" selection-start-column="2" selection-end-line="6" selection-end-column="28" />
+              <caret line="8" column="28" lean-forward="false" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -82,28 +73,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="note.controller.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="note.controller.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/components/note/note.controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="62" column="13" lean-forward="false" selection-start-line="62" selection-start-column="13" selection-end-line="62" selection-end-column="13" />
+            <state relative-caret-position="738">
+              <caret line="77" column="6" lean-forward="true" selection-start-line="77" selection-start-column="6" selection-end-line="77" selection-end-column="6" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="drag.directive.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/shared/drag.directive.js">
+        <entry file="file://$PROJECT_DIR$/src/app/shared/drag/drag.directive.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="14" column="21" lean-forward="false" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+            <state relative-caret-position="69">
+              <caret line="3" column="20" lean-forward="true" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/shared/index.js">
+        <entry file="file://$PROJECT_DIR$/src/app/shared/drag/index.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="33" lean-forward="false" selection-start-line="0" selection-start-column="33" selection-end-line="0" selection-end-column="33" />
@@ -116,7 +107,7 @@
         <entry file="file://$PROJECT_DIR$/src/app/components/note/note.view.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="39" lean-forward="false" selection-start-line="0" selection-start-column="39" selection-end-line="0" selection-end-column="39" />
+              <caret line="0" column="17" lean-forward="false" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -165,6 +156,7 @@
       <find>class</find>
       <find>mouse</find>
       <find>this.l</find>
+      <find>XX</find>
     </findStrings>
     <replaceStrings>
       <replace>balck</replace>
@@ -198,12 +190,15 @@
         <option value="$PROJECT_DIR$/src/app/shared/note/note.js" />
         <option value="$PROJECT_DIR$/src/app/shared/note/index.js" />
         <option value="$PROJECT_DIR$/src/app/shared/note/note.component.js" />
-        <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/src/app/shared/note/note.controller.js" />
         <option value="$PROJECT_DIR$/src/app/shared/note/note.view.html" />
         <option value="$PROJECT_DIR$/src/app/shared/drag.directive.js" />
         <option value="$PROJECT_DIR$/src/app/shared/index.js" />
+        <option value="$PROJECT_DIR$/src/index.js" />
+        <option value="$PROJECT_DIR$/src/app/shared/drag/drag.directive.js" />
         <option value="$PROJECT_DIR$/src/app/components/note/note.controller.js" />
+        <option value="$PROJECT_DIR$/src/app/components/note/note.view.html" />
+        <option value="$PROJECT_DIR$/src/app/components/note/note.component.js" />
       </list>
     </option>
   </component>
@@ -276,7 +271,31 @@
               <item name="magnetic-board" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="login" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="magnetic-board" type="b2602c69:ProjectViewProjectNode" />
+              <item name="magnetic-board" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="note" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="magnetic-board" type="b2602c69:ProjectViewProjectNode" />
+              <item name="magnetic-board" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="shared" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="magnetic-board" type="b2602c69:ProjectViewProjectNode" />
+              <item name="magnetic-board" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="shared" type="462c0819:PsiDirectoryNode" />
+              <item name="drag" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -296,6 +315,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\mtond_000\Desktop\magnetic-board\src\app\shared\drag" />
       <recent name="C:\Users\mtond_000\Desktop\magnetic-board\src\app\components" />
       <recent name="C:\Users\mtond_000\Desktop\magnetic-board\src\app\components\login" />
     </key>
@@ -324,7 +344,7 @@
       <updated>1510827917245</updated>
       <workItem from="1510827918872" duration="26393000" />
       <workItem from="1511201096399" duration="9601000" />
-      <workItem from="1511288398285" duration="1979000" />
+      <workItem from="1511288398285" duration="6744000" />
     </task>
     <task id="LOCAL-00001">
       <created>1510955336618</created>
@@ -337,7 +357,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38270000" />
+    <option name="totallyTimeSpent" value="43035000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
@@ -669,14 +689,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/components/login/login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/components/note/note.component.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="483">
@@ -701,31 +713,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/components/note/note.component.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="6" column="28" lean-forward="true" selection-start-line="5" selection-start-column="2" selection-end-line="6" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/components/note/note.view.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="39" lean-forward="false" selection-start-line="0" selection-start-column="39" selection-end-line="0" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/shared/drag.directive.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="14" column="21" lean-forward="false" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/shared/index.js">
+    <entry file="file://$PROJECT_DIR$/src/app/shared/drag/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="33" lean-forward="false" selection-start-line="0" selection-start-column="33" selection-end-line="0" selection-end-column="33" />
@@ -733,10 +721,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/shared/drag/drag.directive.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" column="20" lean-forward="true" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/components/login/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="16" column="34" lean-forward="false" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
+        <state relative-caret-position="540">
+          <caret line="18" column="30" lean-forward="false" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
           <folding>
             <element signature="e#0#30#0" expanded="true" />
           </folding>
@@ -745,8 +749,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/components/note/note.controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="62" column="13" lean-forward="false" selection-start-line="62" selection-start-column="13" selection-end-line="62" selection-end-column="13" />
+        <state relative-caret-position="738">
+          <caret line="77" column="6" lean-forward="true" selection-start-line="77" selection-start-column="6" selection-end-line="77" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/components/note/note.view.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="17" lean-forward="false" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/components/note/note.component.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="8" column="28" lean-forward="false" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
           <folding />
         </state>
       </provider>

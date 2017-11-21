@@ -1,8 +1,7 @@
 class NoteController {
-  // eslint-disable-next-line
-  constructor($log) {
+  constructor($scope, $log) {
     this.$log = $log;
-
+    this.$scope = $scope;
     // const element = $element;
     //
     // // NoteService.handleOnClick();
@@ -54,15 +53,21 @@ class NoteController {
     //   $document.off('mousemove', mousemove);
     //   $document.off('mouseup', mouseup);
     // }
+    // this.$log.log('xx');
+    // Notes do not know about each other - handle it higher
+    // $scope.$emit('note/clicked', {el: $element});
     //
     // function touchend() {
     //   $document.off('touchmove', touchmove);
     //   $document.off('touchend', touchend);
     // }
+    // eslint-disable-next-line
+    this.$scope.onMouseDown = () => console.log('xx kurwa');
+  }
+  $onInit() {
+    // $log.log('xxx');
   }
   onMouseDown() {
-    // Notes do not know about each other - handle it higher
-    // $scope.$emit('note/clicked', {el: $element});
     //
     // $log.log("clicked");
     //
