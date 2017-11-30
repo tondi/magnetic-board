@@ -1,11 +1,15 @@
-function loginController($scope, $log, $state) {
-  this.hello = 'Board name';
-  this.name = '';
+class loginController {
+  constructor($log, $state) {
+    this.log = $log;
+    this.state = $state;
 
-  $scope.login = function () {
-    $log.log(this.name);
-    $state.go('board');
-  };
+    this.name = '';
+    this.hello = 'hello man';
+  }
+  login() {
+    this.log.log(this.name);
+    this.state.go('board');
+  }
 }
 
 export {loginController};

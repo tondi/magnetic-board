@@ -1,8 +1,9 @@
-import {noteController} from './note.controller';
+import {NoteController} from './note.controller';
 
 const noteComponent = {
   template: require('./note.view.html'),
-  controller: noteController
+  controller: NoteController,
+  controllerAs: 'NoteController'
 };
 
 export {noteComponent};

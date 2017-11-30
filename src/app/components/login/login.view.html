@@ -1,9 +1,9 @@
 
 <div class="login">
-  <h1>{{ $ctrl.hello }}</h1>
+  <h1>{{ loginController.hello }}</h1>
 
-  <form ng-submit="loginComponent()">
-    <input autofocus ng-model="name" class="login__name" type="text" placeholder="Type name">
+  <form ng-submit="loginController.login()">
+    <input autofocus ng-model="loginController.name" class="login__name" type="text" placeholder="Type name">
   </form>
 
 </div>

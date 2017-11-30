@@ -1,12 +1,12 @@
 <div class="board">
-  <div ng-click="add()" class="add">
+  <div ng-click="boardController.add()" class="add">
     add new note
   </div>
 
   <div class="stats">
     <div class="stats__item">
       <span>All toggles: </span>
-      <span class="stats__toggles">5</span>
+      <span ng-bind="boardController.notesCount" class="stats__toggles"></span>
     </div>
     <div class="stats__item">
       <span>On board: </span>

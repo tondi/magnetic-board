@@ -8,10 +8,10 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
   $stateProvider
     .state('login', {
       url: '/',
-      component: 'loginComponent'
+      component: 'login'
     })
     .state('board', {
-      url: '/boardComponent',
+      url: '/board',
       component: 'board'
     });
 }
