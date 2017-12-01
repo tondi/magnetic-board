@@ -6,15 +6,15 @@ import {noteComponent} from './app/components/note/note.component';
 import {DragService} from './app/shared/drag';
 
 import 'angular-ui-router';
-import routesConfig from './routes';
 
+import routesConfig from './routes';
 import './index.scss';
 export const app = 'app';
 
 angular
   .module(app, ['ui.router'])
   .config(routesConfig)
-  .factory('drag', DragService.DragServiceFactory)
+  .service('drag', DragService)
   .component('login', loginComponent)
   .component('board', boardComponent)
   .component('note', noteComponent);

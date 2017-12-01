@@ -1,7 +1,7 @@
-import {boardController} from './board.controller';
+import {BoardController} from './board.controller';
 
 export const boardComponent = {
   template: require('./board.view.html'),
-  controller: boardController,
-  controllerAs: 'boardController'
+  controller: BoardController,
+  controllerAs: 'BoardController'
 };

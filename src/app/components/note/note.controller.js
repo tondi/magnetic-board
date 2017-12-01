@@ -1,7 +1,10 @@
 class NoteController {
-  constructor($scope, $element, $document) {
-    // this.dragService = DragService;
-    // this.dragService.onTouchStart();
+  constructor($scope, $element, $document, DragService) {
+    'ngInject';
+    this.dragService = DragService;
+    this.test = this.dragService.onTouchStart();
+    // eslint-disable-next-line
+    console.log(this.test);
 
     const element = $element;
 
@@ -63,6 +66,6 @@ class NoteController {
   }
 }
 
-// NoteController.$inject(['$scope', '$element', '$document', 'DragService']);
+NoteController.$inject = ['$scope', '$element', '$document', 'drag'];
 
 export {NoteController};

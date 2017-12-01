@@ -1,18 +1,18 @@
 class DragService {
-  constructor($element, $log) {
+  constructor($log) {
     this.$log = $log;
-    $element.bind('mousedown', this.onTouchStart);
+    // $element.bind('mousedown', this.onTouchStart);
   }
 
   onTouchStart() {
-    this.$log.log('darg directive fired');
+    this.$log.log('darg srv fired');
   }
 
-  static DragServiceFactory($element, $log) {
-    return new DragService($element, $log);
-  }
+  // static DragServiceFactory($element, $log) {
+  //   return new DragService($element, $log);
+  // }
 }
 
-// DragService.DragServiceFactory.$inject = ['$element', '$log'];
+// DragService.$inject = ['$element', '$log'];
 
 export {DragService};

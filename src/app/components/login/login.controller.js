@@ -1,4 +1,4 @@
-class loginController {
+class LoginController {
   constructor($log, $state) {
     this.log = $log;
     this.state = $state;
@@ -12,4 +12,4 @@ class loginController {
   }
 }
 
-export {loginController};
+export {LoginController};

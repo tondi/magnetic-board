@@ -1,4 +1,4 @@
-class boardController {
+class BoardController {
   constructor($scope, $log, $compile) {
     this.$scope = $scope;
     this.compile = $compile;
@@ -21,4 +21,4 @@ class boardController {
 
 }
 
-export {boardController};
+export {BoardController};

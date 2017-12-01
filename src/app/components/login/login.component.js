@@ -1,8 +1,8 @@
-import {loginController} from './login.controller';
+import {LoginController} from './login.controller';
 
 export const loginComponent = {
   template: require('./login.view.html'),
-  controller: loginController,
-  controllerAs: 'loginController'
+  controller: LoginController,
+  controllerAs: 'LoginController'
 };
 
