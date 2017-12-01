@@ -1,26 +1,31 @@
 class DragService {
-  constructor($log, $document) {
+  constructor($log, $document, $window, HighlightService) {
     this.$log = $log;
     this.$document = $document;
+    this.$window = $window;
+
+    this.highlightService = HighlightService;
   }
 
-  init(el, $scope) {
-    this.el = el;
-    this.scope = $scope;
+  init(el) {
+    const contentEl = angular.element(el[0].querySelector('.note'));
 
-    const element = this.el;
+    this.highlightService.highlight(el);
+
     let startX = 0;
     let startY = 0;
     let x = 0;
     let y = 0;
 
-    element.css({
+    el.css({
       position: 'absolute',
       cursor: 'pointer'
     });
 
-    element.on('mousedown', event => {
-      this.scope.$emit('note/clicked', {el});
+    contentEl.on('mousedown', event => {
+      el[0].parentElement.appendChild(el[0]);
+
+      this.highlightService.highlight(el);
 
       event.preventDefault();
       startX = event.pageX - x;
@@ -32,7 +37,7 @@ class DragService {
     const mousemove = event => {
       y = event.pageY - startY;
       x = event.pageX - startX;
-      element.css({
+      el.css({
         transform: `translate(${x}px, ${y}px)`
       });
     };
@@ -42,8 +47,10 @@ class DragService {
       this.$document.off('mouseup', mouseup);
     };
 
-    element.on('touchstart', event => {
-      this.scope.$emit('note/clicked', {el});
+    contentEl.on('touchstart', event => {
+      el[0].parentElement.appendChild(el[0]);
+
+      this.highlightService.highlight(el);
 
       event.preventDefault();
       startX = event.changedTouches[0].pageX - x;
@@ -55,7 +62,7 @@ class DragService {
     const touchmove = event => {
       y = event.changedTouches[0].pageY - startY;
       x = event.changedTouches[0].pageX - startX;
-      element.css({
+      el.css({
         transform: `translate(${x}px, ${y}px)`
       });
     };
@@ -67,7 +74,6 @@ class DragService {
   }
 }
 
-
-// DragService.$inject = ['$element', '$log'];
+DragService.$inject = ['$log', '$document', '$window', 'highlight'];
 
 export {DragService};

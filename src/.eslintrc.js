@@ -19,7 +19,7 @@ module.exports = {
     "dot-notation": 1,
     "eqeqeq": 1,
     "indent": [1, 2],
-    "lines-around-comment": [2, {"allowBlockStart": true, "beforeBlockComment": true, "beforeLineComment": true}],
+    "lines-around-comment": [2, {"allowBlockStart": true, "beforeBlockComment": true, "beforeLineComment": false}],
     "new-parens": 1,
     "no-bitwise": 1,
     "no-cond-assign": 1,
@@ -56,6 +56,8 @@ module.exports = {
     "no-var": 1,
     "object-shorthand": 1,
     "prefer-arrow-callback": 1,
-    "prefer-const": 1
+    "prefer-const": 1,
+
+    "max-params": 0
   }
 };

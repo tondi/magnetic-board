@@ -1,15 +1,18 @@
 class NoteController {
-  constructor($scope, $element, $document, DragService) {
-    'ngInject';
-    this.dragService = DragService;
-    this.dragService.init($element, $scope);
+  constructor($scope, $element, $log, DragService) {
+    this.$element = $element;
+    this.$scope = $scope;
+    this.$log = $log;
 
-    // this.test = this.dragService.onTouchStart();
-    // eslint-disable-next-line
-    // console.log(this.test);
+    this.dragService = DragService;
+    this.dragService.init($element);
+  }
+  remove() {
+    this.$element.remove();
+    this.$scope.$emit('note/remove', {});
   }
 }
 
-NoteController.$inject = ['$scope', '$element', '$document', 'drag'];
+NoteController.$inject = ['$scope', '$element', '$log', 'drag'];
 
 export {NoteController};

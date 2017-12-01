@@ -1,16 +1,17 @@
 <div class="board">
   <div ng-click="BoardController.add()" class="add">
-    add new note
+    <i class="material-icons">note_add</i>
   </div>
 
   <div class="stats">
+    <i class="material-icons">show_chart</i>
     <div class="stats__item">
       <span>All toggles: </span>
-      <span ng-bind="BoardController.notesCount" class="stats__toggles"></span>
+      <span ng-bind="BoardController.operationsCount" class="stats__toggles"></span>
     </div>
     <div class="stats__item">
       <span>On board: </span>
-      <span class="stats__currently">3</span>
+      <span ng-bind="BoardController.notesCount" class="stats__currently"></span>
     </div>
   </div>
 
