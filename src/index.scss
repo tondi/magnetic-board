@@ -1,4 +1,9 @@
+$silver-neutral: rgba(0,0,0,0.3);
+$silver-dark: rgba(0,0,0,0.5);
 $black: #000;
+
+$white-light: #fafafa;
+$white-dark: #fdfdfd;
 
 body, html {
   height: 100%;
@@ -33,6 +38,12 @@ body, html {
   }
 }
 
+.board {
+  &__tinymce {
+    display: none;
+  }
+}
+
 .add {
   position: absolute;
   left: 0;
@@ -61,20 +72,145 @@ body, html {
 .note {
   position: relative;
 
-  height: 100px;
-  width: 100px;
-  background-color: #fafafa;
-  box-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+  height: 150px;
+  width: 200px;
+  background-color: $white-light;
+  box-shadow: 1px 1px 4px $silver-neutral;
   border-radius: 4px;
-  resize: both;
+
+  overflow: hidden;
+  .note--highlighted & {
+    background-color: $white-dark;
+  }
+  &:hover {
+    background-color: $white-dark;
+  }
   &__close {
     position: absolute;
-    top: 8px;
-    right: 8px;
+    top: 6px;
+    right: 6px;
 
-    height: 8px;
+    height: 12px;
   }
-  .note--highlighted & {
-    background-color: #fdfdfd;
+  &__resize {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 16px;
+    height: 16px;
+
+    cursor: nwse-resize;
+    &:hover {
+      .note__long-bar {
+        background-color: $silver-dark;
+      }
+      .note__short-bar {
+        background-color: $silver-dark;
+      }
+    }
   }
+  &__long-bar {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 100%;
+    height: 1px;
+
+    transform: translate(-50%, -50%) rotate(-45deg);
+    background-color: $silver-neutral;
+  }
+  &__short-bar {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    transform-origin: 0px -5px;
+
+    width: 50%;
+    height: 1px;
+
+    background-color: $silver-neutral;
+  }
+  &__content {
+    padding: 8px 24px 8px 8px;
+  }
+  &__edit {
+    position: absolute;
+    left: 4px;
+    bottom: 4px;
+    i {
+      font-size: 2em;
+    }
+  }
+}
+
+.mce-tinymce {
+  width: 50% !important;
+  z-index: 2;
+  box-shadow: 1px 1px 4px $silver-neutral;
+}
+
+.mce-btn-group:nth-last-child(2) {
+  position: absolute;
+  right: 16px;
+  bottom: 2px;
+
+  z-index: 1;
+}
+
+  .mce-i-confirm:before {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+    content: 'check_box';
+
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+.mce-btn-group:nth-last-child(1) {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+}
+
+  .mce-i-cancel:before {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+    content: 'cancel';
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+.mce-notification-warning {
+  display: none;
 }
