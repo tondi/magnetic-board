@@ -11,7 +11,6 @@ class ResizeDirective {
 
     const contentEl = angular.element($element[0].querySelector('.note__resize'));
     const el = angular.element($element[0].querySelector('.note'));
-    const elParent = $element;
 
     let startWidth;
     let startHeight;

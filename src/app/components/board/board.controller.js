@@ -9,7 +9,7 @@ class BoardController {
     // $scope.$on('note/click', (e, data) => {
     // });
 
-    $scope.$on('note/remove', (e, data) => {
+    $scope.$on('note/remove', () => {
       this.notesCount--;
     });
   }

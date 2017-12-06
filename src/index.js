@@ -7,8 +7,9 @@ import {boardComponent} from './app/components/board/board.component';
 import {noteComponent} from './app/components/note/note.component';
 
 /* Services */
-import {DragService} from './app/shared/drag';
-import {HighlightService} from './app/shared/highlight/highlight.service';
+import {DragService} from './app/services/drag';
+import {HighlightService} from './app/services/highlight/highlight.service';
+import {DataService} from './app/services/data/data.service';
 
 /* Directives */
 import {ResizeDirective} from './app/shared/resize/resize.directive';
@@ -28,9 +29,8 @@ angular
   .constant('constants', constants)
   .service('drag', DragService)
   .service('highlight', HighlightService)
-
+  .factory('data', ['$http', '$log', ($http, $log) => new DataService($http, $log)])
   .directive('resize', () => new ResizeDirective())
   .component('login', loginComponent)
   .component('board', boardComponent)
   .component('note', noteComponent);
-
