@@ -17,7 +17,7 @@ class DataService {
       }
     };
 
-    return this.$http.get('http://localhost/magnetic-board-server/board/get.php', params).then(result => {
+    return this.$http.get('http://localhost/magnetic-board-server/board/read.php', params).then(result => {
       return new Promise((resolve, reject) => {
         if (result.data.id) {
           this.$log.log('Board found', result);
@@ -49,6 +49,19 @@ class DataService {
           reject(result);
         }
       });
+    });
+  }
+
+  fetchNotes() {
+    const params = {
+      params: {
+        id: this.boardId
+      }
+    };
+
+    return this.$http.get('http://localhost/magnetic-board-server/notes/read.php', params).then(result => {
+      this.$log.log('Notes fetched:', result);
+      return Promise.resolve(result);
     });
   }
 }
