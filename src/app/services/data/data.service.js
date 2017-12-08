@@ -69,7 +69,7 @@ class DataService {
     const params = {
       params: {
         boardId: this.boardId,
-        noteId: noteId,
+        noteId,
         sizeX: x,
         sizeY: y
       }
@@ -79,6 +79,55 @@ class DataService {
       this.$log.log('Updated size:', result);
       return Promise.resolve(result);
     });
+  }
+
+  updatePosition(noteId, x, y) {
+    const params = {
+      params: {
+        boardId: this.boardId,
+        noteId,
+        positionX: x,
+        positionY: y
+      }
+    };
+    return this.$http.get('http://localhost/magnetic-board-server/notes/update/position.php', params).then(result => {
+      this.$log.log('Updated position:', result);
+      return Promise.resolve(result);
+    });
+  }
+
+  updateContent(noteId, content) {
+    // this.$log.log('api request content wih values', noteId, content);
+    const params = {
+      params: {
+        boardId: this.boardId,
+        noteId,
+        content
+      }
+    };
+    return this.$http.get('http://localhost/magnetic-board-server/notes/update/content.php', params).then(result => {
+      this.$log.log('Updated content:', result);
+      return Promise.resolve(result);
+    });
+  }
+
+  addNote(position, size, content) {
+    const params = {
+      params: {
+        boardId: this.boardId,
+        positionX: position.x,
+        positionY: position.y,
+        sizeX: size.x,
+        sizeY: size.y,
+        content
+      }
+    };
+    this.$log.log(params);
+    return this.$http.get('http://localhost/magnetic-board-server/notes/add.php', params).then(result => {
+      this.$log.log('Added:', result);
+      return Promise.resolve(result);
+    });
+    // osition="{x: 0, y: 0}" size="{x: 100, y: 100}" content=""
   }
 }
 

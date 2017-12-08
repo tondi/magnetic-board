@@ -1,10 +1,11 @@
 class NoteController {
-  constructor($scope, $element, $log, DragService) {
+  constructor($scope, $element, $log, DragService, DataService) {
     this.$element = $element;
     this.$scope = $scope;
     this.$log = $log;
 
     this.dragService = DragService;
+    this.DataService = DataService;
 
     this.id = '';
     this.position = '';
@@ -17,7 +18,7 @@ class NoteController {
     // this.$log.log('attrs', this.$attrs);
     // }
     // this.position = this.$attrs.position;
-    // this.$log.log('this', this);
+    // this.$log.log('thisScope', this.$scope);
     // $timeout(() => {
     //   this.position = this.$attrs.position;
     //   this.$log.log('this.position', this.position);
@@ -26,7 +27,7 @@ class NoteController {
 
   $onInit() {
     this.setInitialValues();
-    this.dragService.init(this.$element);
+    this.dragService.init(this.$element, this.id);
   }
 
   setInitialValues() {
@@ -37,7 +38,7 @@ class NoteController {
       height: `${this.size.y}px`,
     });
     this.$element.css({
-      transform: `translate(${this.position.x}px, ${this.position.x}px)`
+      transform: `translate(${this.position.x}px, ${this.position.y}px)`
     });
   }
 
@@ -61,6 +62,7 @@ class NoteController {
             // refresh
             this.$scope.$apply();
             tinymce.remove();
+            this.DataService.updateContent(this.id, this.content);
           }
         });
         editor.addButton('cancel', {
@@ -74,6 +76,6 @@ class NoteController {
   }
 }
 
-NoteController.$inject = ['$scope', '$element', '$log', 'drag'];
+NoteController.$inject = ['$scope', '$element', '$log', 'drag', 'data'];
 
 export {NoteController};

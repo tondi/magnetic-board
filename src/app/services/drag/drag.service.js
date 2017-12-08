@@ -1,23 +1,22 @@
 class DragService {
-  constructor($log, $document, $window, HighlightService) {
+  constructor($log, $document, $window, HighlightService, DataService) {
     this.$log = $log;
     this.$document = $document;
     this.$window = $window;
 
     this.highlightService = HighlightService;
+    this.DataService = DataService;
   }
 
-  init(el) {
+  init(el, id) {
     const contentEl = angular.element(el[0].querySelector('.note'));
 
     this.highlightService.highlight(el);
 
     const initialTransform = el.css('transform');
-    const regex = /(-*\d*)px.*-*\d*px/g;
-    const result = regex.exec(initialTransform);
-    // this.$log.log('dragSrv transorms', initialTransform, result);
-    let x = result[0].split('p')[0];
-    let y = result[1].split('p')[0];
+    const regex = /-*\d*px/g;
+    let x = regex.exec(initialTransform)[0].split('p')[0];
+    let y = regex.exec(initialTransform)[0].split('p')[0];
 
     let startX = 0;
     let startY = 0;
@@ -48,6 +47,7 @@ class DragService {
     };
 
     const mouseup = () => {
+      updatePosition();
       this.$document.off('mousemove', mousemove);
       this.$document.off('mouseup', mouseup);
     };
@@ -73,12 +73,19 @@ class DragService {
     };
 
     const touchend = () => {
+      updatePosition();
       this.$document.off('touchmove', touchmove);
       this.$document.off('touchend', touchend);
     };
+
+    const updatePosition = () => {
+      // const id = $scope;
+      // this.$log.log('dragService:', id, x, y);
+      this.DataService.updatePosition(id, x, y);
+    }
   }
 }
 
-DragService.$inject = ['$log', '$document', '$window', 'highlight'];
+DragService.$inject = ['$log', '$document', '$window', 'highlight', 'data'];
 
 export {DragService};

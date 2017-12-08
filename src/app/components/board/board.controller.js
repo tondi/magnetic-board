@@ -21,6 +21,7 @@ class BoardController {
     this.DataService.fetchNotes().then(result => {
       // this.renderNotes(result.data);
       this.notes = result.data;
+      this.$log.log(this.notes);
     });
   }
 
@@ -30,11 +31,14 @@ class BoardController {
   // }
 
   add() {
-    const el = this.compile('<note resize position="{x: 0, y: 0}" size="{x: 100, y: 100}" content=""></note>')(this.$scope);
-    // eslint-disable-next-line
-    angular.element(document.querySelector('.board')).append(el);
-    this.notesCount++;
-    this.operationsCount++;
+    this.DataService.addNote({x: 0, y: 0}, {x: 100, y: 100}, '<p>test</p>').then(result => {
+      const el = this.compile(`<note resize note-id="${result.data.id}" position="{x: 0, y: 0}" size="{x: 100, y: 100}" content=""></note>`)(this.$scope);
+      // eslint-disable-next-line
+      angular.element(document.querySelector('.board')).append(el);
+      this.$log.log(el);
+      this.notesCount++;
+      this.operationsCount++;
+    })
   }
 }
 

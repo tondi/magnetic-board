@@ -151,12 +151,20 @@ body, html {
   box-shadow: 1px 1px 4px $silver-neutral;
 }
 
+.mce-stack-layout-item {
+  position: static !important;
+}
+
 .mce-btn-group:nth-last-child(2) {
   position: absolute;
   right: 16px;
-  bottom: 2px;
-
+  bottom: -2px;
   z-index: 1;
+
+  border: 0 !important;
+  .mce-btn {
+    background: transparent;
+  }
 }
 
   .mce-i-confirm:before {
