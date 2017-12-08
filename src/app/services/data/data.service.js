@@ -5,7 +5,7 @@ class DataService {
     this.boardId = this.getCookieBoardId();
   }
 
-  static getCookieBoardId() {
+  getCookieBoardId() {
     const idRegexp = /boardId=(\d*)/;
     // eslint-disable-next-line
     return idRegexp.exec(document.cookie)[1];
