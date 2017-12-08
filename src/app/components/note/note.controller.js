@@ -6,6 +6,11 @@ class NoteController {
 
     this.dragService = DragService;
 
+    this.id = '';
+    this.position = '';
+    this.size = '';
+    this.content = '';
+
     // this.content = '<p>What needs to be done?</p>';
 
     // this.link = attrs => {
@@ -18,6 +23,7 @@ class NoteController {
     //   this.$log.log('this.position', this.position);
     // }, 100);
   }
+
   $onInit() {
     this.setInitialValues();
     this.dragService.init(this.$element);
@@ -39,6 +45,7 @@ class NoteController {
     this.$element.remove();
     this.$scope.$emit('note/remove', {});
   }
+
   edit() {
     tinymce.init({
       selector: '.board__tinymce',

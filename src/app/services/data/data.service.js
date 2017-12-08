@@ -65,8 +65,20 @@ class DataService {
     });
   }
 
-  updateSize() {
-    this.$log.log('update size');
+  updateSize(noteId, x, y) {
+    const params = {
+      params: {
+        boardId: this.boardId,
+        noteId: noteId,
+        sizeX: x,
+        sizeY: y
+      }
+    };
+
+    return this.$http.get('http://localhost/magnetic-board-server/notes/update/size.php', params).then(result => {
+      this.$log.log('Updated size:', result);
+      return Promise.resolve(result);
+    });
   }
 }
 
