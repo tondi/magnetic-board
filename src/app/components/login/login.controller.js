@@ -11,6 +11,7 @@ class LoginController {
     this.DataService.getBoard(this.name)
       .then(result => {
         this.DataService.setBoardId(result.data.id);
+        this.DataService.operationsCount = result.data.count;
         this.$state.go('board');
       })
       .catch(() => {

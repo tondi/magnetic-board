@@ -69,14 +69,18 @@ body, html {
   }
 }
 
+note {
+  box-shadow: 1px 1px 4px $silver-neutral;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
 .note {
   position: relative;
 
   height: 150px;
   width: 200px;
   background-color: $white-light;
-  box-shadow: 1px 1px 4px $silver-neutral;
-  border-radius: 4px;
 
   overflow: hidden;
   .note--highlighted & {

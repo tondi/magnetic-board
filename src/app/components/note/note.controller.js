@@ -44,6 +44,7 @@ class NoteController {
 
   remove() {
     this.$element.remove();
+    this.DataService.removeNote(this.id);
     this.$scope.$emit('note/remove', {});
   }
 

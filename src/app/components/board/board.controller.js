@@ -6,7 +6,7 @@ class BoardController {
     this.DataService = DataService;
 
     this.notesCount = 0;
-    this.operationsCount = 0;
+    this.operationsCount = this.DataService.operationsCount || 0;
     this.notes = null;
 
     // $scope.$on('note/click', (e, data) => {
@@ -21,6 +21,7 @@ class BoardController {
     this.DataService.fetchNotes().then(result => {
       // this.renderNotes(result.data);
       this.notes = result.data;
+      this.notesCount = this.notes.length;
       this.$log.log(this.notes);
     });
   }

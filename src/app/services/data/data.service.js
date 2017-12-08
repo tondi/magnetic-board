@@ -2,7 +2,7 @@ class DataService {
   constructor($http, $log) {
     this.$http = $http;
     this.$log = $log;
-    this.boardId = '1';
+    this.boardId = null;
   }
 
   setBoardId(id) {
@@ -125,6 +125,21 @@ class DataService {
     this.$log.log(params);
     return this.$http.get('http://localhost/magnetic-board-server/notes/add.php', params).then(result => {
       this.$log.log('Added:', result);
+      return Promise.resolve(result);
+    });
+    // osition="{x: 0, y: 0}" size="{x: 100, y: 100}" content=""
+  }
+
+  removeNote(id) {
+    const params = {
+      params: {
+        boardId: this.boardId,
+        noteId: id
+      }
+    };
+    this.$log.log(params);
+    return this.$http.get('http://localhost/magnetic-board-server/notes/remove.php', params).then(result => {
+      this.$log.log('removed:', result);
       return Promise.resolve(result);
     });
     // osition="{x: 0, y: 0}" size="{x: 100, y: 100}" content=""
