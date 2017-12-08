@@ -1,5 +1,5 @@
 <div class="board">
-  <div ng-click="BoardController.add()" class="add">
+  <div ng-click="BoardController.addNote()" class="add">
     <i class="material-icons">note_add</i>
   </div>
 
@@ -15,7 +15,7 @@
     </div>
   </div>
 
-  <textarea class="board__tinymce"></textarea>
+  <textarea title="tinyMCE editor" class="board__tinymce"></textarea>
 
 
   <note resize ng-repeat="note in BoardController.notes" note-id="note.id" position="note.position" size="note.size" content="note.content">

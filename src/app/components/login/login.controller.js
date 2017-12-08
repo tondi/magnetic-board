@@ -15,7 +15,7 @@ class LoginController {
         this.$state.go('board');
       })
       .catch(() => {
-        this.DataService.createBoard(this.name).then(() => {
+        this.DataService.addBoard(this.name).then(() => {
           this.DataService.getBoard(this.name).then(result => {
             this.DataService.setBoardId(result.data.id);
             this.$state.go('board');

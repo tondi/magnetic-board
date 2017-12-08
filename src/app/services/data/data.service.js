@@ -2,11 +2,19 @@ class DataService {
   constructor($http, $log) {
     this.$http = $http;
     this.$log = $log;
-    this.boardId = null;
+    this.boardId = this.getCookieBoardId();
+  }
+
+  static getCookieBoardId() {
+    const idRegexp = /boardId=(\d*)/;
+    // eslint-disable-next-line
+    return idRegexp.exec(document.cookie)[1];
   }
 
   setBoardId(id) {
     this.boardId = id;
+    // eslint-disable-next-line
+    document.cookie = `boardId=${id}`;
     this.$log.log('Setting board id: ', this.boardId);
   }
 
@@ -31,14 +39,14 @@ class DataService {
     });
   }
 
-  createBoard(name) {
+  addBoard(name) {
     const params = {
       params: {
         name
       }
     };
 
-    return this.$http.get('http://localhost/magnetic-board-server/board/add.php', params).then(result => {
+    return this.$http.get('http://localhost/magnetic-board-server/board/addNote.php', params).then(result => {
       return new Promise((resolve, reject) => {
         if (result.data.status === 'OK') {
           this.$log.log('Board created', result);
@@ -97,7 +105,6 @@ class DataService {
   }
 
   updateContent(noteId, content) {
-    // this.$log.log('api request content wih values', noteId, content);
     const params = {
       params: {
         boardId: this.boardId,

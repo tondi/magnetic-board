@@ -26,13 +26,8 @@ class BoardController {
     });
   }
 
-  // renderNotes(notes) {
-  //   this.nodes = notes;
-  //   this.$log.log('Setting notes, now:', this.notes);
-  // }
-
-  add() {
-    this.DataService.addNote({x: 0, y: 0}, {x: 100, y: 100}, '<p>test</p>').then(result => {
+  addNote() {
+    this.DataService.addNote({x: 0, y: 0}, {x: 100, y: 100}, '').then(result => {
       const el = this.compile(`<note resize note-id="${result.data.id}" position="{x: 0, y: 0}" size="{x: 100, y: 100}" content=""></note>`)(this.$scope);
       // eslint-disable-next-line
       angular.element(document.querySelector('.board')).append(el);
