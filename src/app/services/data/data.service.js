@@ -2,7 +2,7 @@ class DataService {
   constructor($http, $log) {
     this.$http = $http;
     this.$log = $log;
-    this.boardId = undefined;
+    this.boardId = '1';
   }
 
   setBoardId(id) {
@@ -64,6 +64,12 @@ class DataService {
       return Promise.resolve(result);
     });
   }
+
+  updateSize() {
+    this.$log.log('update size');
+  }
 }
+
+DataService.$inject = ['$http', '$log'];
 
 export {DataService};

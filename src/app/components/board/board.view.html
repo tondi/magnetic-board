@@ -18,7 +18,7 @@
   <textarea class="board__tinymce"></textarea>
 
 
-  <note resize ng-repeat="note in BoardController.notes">
+  <note resize ng-repeat="note in BoardController.notes" note-id="note.id" position="note.position" size="note.size" content="note.content">
 
   </note>
 </div>

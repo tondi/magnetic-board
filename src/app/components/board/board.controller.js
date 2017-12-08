@@ -30,7 +30,7 @@ class BoardController {
   // }
 
   add() {
-    const el = this.compile('<note resize></note>')(this.$scope);
+    const el = this.compile('<note resize position="{x: 0, y: 0}" size="{x: 100, y: 100}" content=""></note>')(this.$scope);
     // eslint-disable-next-line
     angular.element(document.querySelector('.board')).append(el);
     this.notesCount++;

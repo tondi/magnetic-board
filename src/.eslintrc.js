@@ -58,6 +58,7 @@ module.exports = {
     "prefer-arrow-callback": 1,
     "prefer-const": 1,
 
-    "max-params": 0
+    "max-params": 0,
+    "no-underscore-dangle": 0
   }
 };

@@ -29,7 +29,7 @@ angular
   .constant('constants', constants)
   .service('drag', DragService)
   .service('highlight', HighlightService)
-  .factory('data', ['$http', '$log', ($http, $log) => new DataService($http, $log)])
+  .factory('data', ($http, $log) => new DataService($http, $log))
   .directive('resize', () => new ResizeDirective())
   .component('login', loginComponent)
   .component('board', boardComponent)

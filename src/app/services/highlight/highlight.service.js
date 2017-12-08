@@ -7,7 +7,6 @@ class HighlightService {
   }
 
   highlight(el) {
-    this.$log.log('srv', el);
     if (this.highlightedElement) {
       this.highlightedElement.removeClass('note--highlighted');
     }

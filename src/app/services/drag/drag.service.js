@@ -12,10 +12,15 @@ class DragService {
 
     this.highlightService.highlight(el);
 
+    const initialTransform = el.css('transform');
+    const regex = /(-*\d*)px.*-*\d*px/g;
+    const result = regex.exec(initialTransform);
+    // this.$log.log('dragSrv transorms', initialTransform, result);
+    let x = result[0].split('p')[0];
+    let y = result[1].split('p')[0];
+
     let startX = 0;
     let startY = 0;
-    let x = 0;
-    let y = 0;
 
     el.css({
       position: 'absolute',
