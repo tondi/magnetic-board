@@ -59,6 +59,7 @@ module.exports = {
     "prefer-const": 1,
 
     "max-params": 0,
-    "no-underscore-dangle": 0
+    "no-underscore-dangle": 0,
+    "linebreak-style": 0
   }
 };
