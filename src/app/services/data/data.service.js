@@ -4,7 +4,7 @@ class DataService {
     this.$log = $log;
     this.boardId = this.getCookieBoardId();
     this.operationsCount = this.getCookieOperationsCount() || 0;
-    this.apiPrefix = 'http://localhost/magnetic-board-server';
+    this.apiPrefix = 'https://tondi.pl/magnetic-board-server';
   }
 
   getCookieBoardId() {

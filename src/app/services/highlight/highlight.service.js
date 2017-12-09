@@ -23,4 +23,6 @@ class HighlightService {
   }
 }
 
+HighlightService.$inject = ['$log', '$document', '$window'];
+
 export {HighlightService};
