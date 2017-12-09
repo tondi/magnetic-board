@@ -18,6 +18,7 @@ class DragService {
     const contentEl = angular.element(el[0].querySelector('.note'));
 
     this.highlightService.highlight(el);
+    this.setCurrentNoteId(id);
 
     const initialTransform = el.css('transform');
     const regex = /-*\d*px/g;

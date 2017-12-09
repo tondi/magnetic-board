@@ -13,7 +13,6 @@ class BoardController {
     $scope.$on('note/remove', (e, data) => {
       const noteToRemove = this.notes.find(el => el.id === data.id);
       const index = this.notes.indexOf(noteToRemove);
-      this.$log.log(e, data, noteToRemove, index, this.notes);
       this.notes.splice(index, 1);
       this.notesCount--;
     });
@@ -27,7 +26,6 @@ class BoardController {
       // this.renderNotes(result.data);
       this.notes = result.data;
       this.notesCount = this.notes.length;
-      this.$log.log(this.notes);
     });
     this.initTinyMCE();
   }
