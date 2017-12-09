@@ -4,6 +4,7 @@ class DataService {
     this.$log = $log;
     this.boardId = this.getCookieBoardId();
     this.operationsCount = this.getCookieOperationsCount() || 0;
+    this.apiPrefix = 'http://localhost/magnetic-board-server';
   }
 
   getCookieBoardId() {
@@ -43,7 +44,7 @@ class DataService {
       }
     };
 
-    return this.$http.get('http://localhost/magnetic-board-server/board/read.php', params).then(result => {
+    return this.$http.get(`${this.apiPrefix}/board/read.php`, params).then(result => {
       return new Promise((resolve, reject) => {
         if (result.data.id) {
           this.$log.log('Board found', result);
@@ -64,7 +65,7 @@ class DataService {
       }
     };
 
-    return this.$http.get('http://localhost/magnetic-board-server/board/add.php', params).then(result => {
+    return this.$http.get(`${this.apiPrefix}/board/add.php`, params).then(result => {
       return new Promise((resolve, reject) => {
         if (result.data.status === 'OK') {
           this.$log.log('Board created', result);
@@ -85,7 +86,7 @@ class DataService {
       }
     };
 
-    return this.$http.get('http://localhost/magnetic-board-server/notes/read.php', params).then(result => {
+    return this.$http.get(`${this.apiPrefix}/notes/read.php`, params).then(result => {
       this.$log.log('Notes fetched:', result);
       return Promise.resolve(result);
     });
@@ -101,7 +102,7 @@ class DataService {
       }
     };
 
-    return this.$http.get('http://localhost/magnetic-board-server/notes/update/size.php', params).then(result => {
+    return this.$http.get(`${this.apiPrefix}/notes/update/size.php`, params).then(result => {
       this.$log.log('Updated size:', result);
       return Promise.resolve(result);
     });
@@ -116,7 +117,7 @@ class DataService {
         positionY: y
       }
     };
-    return this.$http.get('http://localhost/magnetic-board-server/notes/update/position.php', params).then(result => {
+    return this.$http.get(`${this.apiPrefix}/notes/update/position.php`, params).then(result => {
       this.$log.log('Updated position:', result);
       return Promise.resolve(result);
     });
@@ -131,7 +132,7 @@ class DataService {
       }
     };
     this.$log.log('Updating content with valuees:', params);
-    return this.$http.get('http://localhost/magnetic-board-server/notes/update/content.php', params).then(result => {
+    return this.$http.get(`${this.apiPrefix}/notes/update/content.php`, params).then(result => {
       this.$log.log('Updated content:', result);
       return Promise.resolve(result);
     });
@@ -149,7 +150,7 @@ class DataService {
       }
     };
     this.$log.log(params);
-    return this.$http.get('http://localhost/magnetic-board-server/notes/add.php', params).then(result => {
+    return this.$http.get(`${this.apiPrefix}/notes/add.php`, params).then(result => {
       this.$log.log('Added:', result);
       return Promise.resolve(result);
     });
@@ -164,11 +165,10 @@ class DataService {
       }
     };
     this.$log.log(params);
-    return this.$http.get('http://localhost/magnetic-board-server/notes/remove.php', params).then(result => {
+    return this.$http.get(`${this.apiPrefix}/notes/remove.php`, params).then(result => {
       this.$log.log('removed:', result);
       return Promise.resolve(result);
     });
-    // osition="{x: 0, y: 0}" size="{x: 100, y: 100}" content=""
   }
 }
 
