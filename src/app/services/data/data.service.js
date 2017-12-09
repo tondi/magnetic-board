@@ -3,19 +3,35 @@ class DataService {
     this.$http = $http;
     this.$log = $log;
     this.boardId = this.getCookieBoardId();
+    this.operationsCount = this.getCookieOperationsCount() || 0;
   }
 
   getCookieBoardId() {
-    const idRegexp = /boardId=(\d*)/;
+    const regexp = /boardId=(\d*)/;
     // eslint-disable-next-line
-    return idRegexp.exec(document.cookie)[1];
+    return regexp.exec(document.cookie)[1];
   }
 
   setBoardId(id) {
     this.boardId = id;
     // eslint-disable-next-line
     document.cookie = `boardId=${id}`;
-    this.$log.log('Setting board id: ', this.boardId);
+  }
+
+  getCookieOperationsCount() {
+    const regexp = /operationsCount=(\d*)/;
+    // eslint-disable-next-line
+    const result = regexp.exec(document.cookie);
+    if (result) {
+      // eslint-disable-next-line
+      return regexp.exec(document.cookie)[1];
+    }
+  }
+
+  setOperationsCount(operations) {
+    this.operationsCount = operations;
+    // eslint-disable-next-line
+    document.cookie = `operationsCount=${operations}`;
   }
 
   getBoard(name) {
@@ -46,7 +62,7 @@ class DataService {
       }
     };
 
-    return this.$http.get('http://localhost/magnetic-board-server/board/addNote.php', params).then(result => {
+    return this.$http.get('http://localhost/magnetic-board-server/board/add.php', params).then(result => {
       return new Promise((resolve, reject) => {
         if (result.data.status === 'OK') {
           this.$log.log('Board created', result);
@@ -112,6 +128,7 @@ class DataService {
         content
       }
     };
+    this.$log.log('Updating content with valuees:', params);
     return this.$http.get('http://localhost/magnetic-board-server/notes/update/content.php', params).then(result => {
       this.$log.log('Updated content:', result);
       return Promise.resolve(result);

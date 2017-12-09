@@ -6,6 +6,12 @@ class DragService {
 
     this.highlightService = HighlightService;
     this.DataService = DataService;
+
+    this.currentNoteId = null;
+  }
+
+  setCurrentNoteId(id) {
+    this.currentNoteId = id;
   }
 
   init(el, id) {
@@ -30,6 +36,7 @@ class DragService {
       el[0].parentElement.appendChild(el[0]);
 
       this.highlightService.highlight(el);
+      this.currentNoteId = id;
 
       event.preventDefault();
       startX = event.pageX - x;

@@ -11,18 +11,6 @@ class NoteController {
     this.position = '';
     this.size = '';
     this.content = '';
-
-    // this.content = '<p>What needs to be done?</p>';
-
-    // this.link = attrs => {
-    // this.$log.log('attrs', this.$attrs);
-    // }
-    // this.position = this.$attrs.position;
-    // this.$log.log('thisScope', this.$scope);
-    // $timeout(() => {
-    //   this.position = this.$attrs.position;
-    //   this.$log.log('this.position', this.position);
-    // }, 100);
   }
 
   $onInit() {
@@ -45,35 +33,15 @@ class NoteController {
   remove() {
     this.$element.remove();
     this.DataService.removeNote(this.id);
-    this.$scope.$emit('note/remove', {});
+    this.$scope.$emit('note/remove', {id: this.id});
   }
 
   edit() {
-    tinymce.init({
-      selector: '.board__tinymce',
-      branding: false,
-      toolbar: 'formatselect | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright ' +
-      'alignjustify  | numlist bullist outdent indent  | removeformat | fullpage | code | confirm | cancel',
-      resize: true,
-      setup: editor => {
-        editor.addButton('confirm', {
-          icon: 'confirm',
-          onclick: () => {
-            this.content = tinymce.activeEditor.getContent();
-            // refresh
-            this.$scope.$apply();
-            tinymce.remove();
-            this.DataService.updateContent(this.id, this.content);
-          }
-        });
-        editor.addButton('cancel', {
-          icon: 'cancel',
-          onclick: () => {
-            tinymce.remove();
-          }
-        });
-      }
-    });
+    this.$log.log('click note edit', this, tinymce);
+    this.dragService.setCurrentNoteId(this.id);
+    tinymce.activeEditor.editorContainer.classList.add('visible');
+    tinymce.activeEditor.setContent(this.content);
+    this.$scope.$applyAsync();
   }
 }
 

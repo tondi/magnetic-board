@@ -5,19 +5,20 @@ class LoginController {
     this.DataService = DataService;
 
     this.name = '';
-    this.hello = 'hello man';
+    this.hello = 'Hello';
   }
   login() {
     this.DataService.getBoard(this.name)
       .then(result => {
         this.DataService.setBoardId(result.data.id);
-        this.DataService.operationsCount = result.data.count;
+        this.DataService.setOperationsCount(result.data.count);
         this.$state.go('board');
       })
       .catch(() => {
         this.DataService.addBoard(this.name).then(() => {
           this.DataService.getBoard(this.name).then(result => {
             this.DataService.setBoardId(result.data.id);
+            this.DataService.setOperationsCount(result.data.count);
             this.$state.go('board');
           })
           .catch(result => {

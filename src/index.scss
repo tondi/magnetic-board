@@ -1,6 +1,8 @@
 $silver-neutral: rgba(0,0,0,0.3);
 $silver-dark: rgba(0,0,0,0.5);
 $black: #000;
+$black-light: #222;
+$black-dark: #1f1f1f;
 
 $white-light: #fafafa;
 $white-dark: #fdfdfd;
@@ -26,14 +28,24 @@ body, html {
 
 .login {
   &__name {
-    //color: $black;
+    font-family: Lato, 'Material Icons';
+    font-size: 1.3em;
     border: none;
-    border-bottom: 1px solid $black;
-    outline:none;
+    color: $black-light;
+    border-bottom: 2px solid $silver-dark;
+    outline: none;
+    padding-bottom: 4px;
+    width: 260px;
     &:focus {
       outline: none;
-      border-bottom: 2px solid black;
-      color: black;
+      border-bottom: 2px solid $black-dark;
+      color: $black-dark;
+      &::-webkit-input-placeholder{
+        color: $black-dark;
+      }
+      &::-moz-placeholder{
+        color: $black-dark;
+      }
     }
   }
 }
@@ -153,6 +165,10 @@ note {
   width: 50% !important;
   z-index: 2;
   box-shadow: 1px 1px 4px $silver-neutral;
+  display: none !important;
+  &.visible {
+    display: block !important;
+  }
 }
 
 .mce-stack-layout-item {
