@@ -9,7 +9,9 @@ class DataService {
   getCookieBoardId() {
     const regexp = /boardId=(\d*)/;
     // eslint-disable-next-line
-    return regexp.exec(document.cookie)[1];
+    const result = regexp.exec(document.cookie);
+    if (result)
+      return result[1];
   }
 
   setBoardId(id) {

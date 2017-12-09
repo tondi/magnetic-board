@@ -1,9 +1,9 @@
-
 <div class="login">
-  <h1>{{ LoginController.hello }}</h1>
+  <h1 class="login__header">{{ LoginController.hello }}</h1>
 
   <form ng-submit="LoginController.login()">
-    <input autofocus ng-model="LoginController.name" class="login__name" type="text" placeholder="&#xE871; Board name">
+    <input autofocus ng-model="LoginController.name" class="login__name" type="text" placeholder="&#xE871; Name">
   </form>
+  <div>Login to existing board or create a new one</div>
 
 </div>
