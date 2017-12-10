@@ -57,6 +57,9 @@ body, html {
       &::-moz-placeholder{
         color: $black-dark;
       }
+      &.ng-not-empty {
+        font-family: Lato;
+      }
     }
   }
 }
