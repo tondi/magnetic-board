@@ -1,6 +1,6 @@
 # magnetic-board
 
-AngularJS ES6 public access information-sharing notice board
+AngularJS ES6 notes board
 
 Built with
 - AngularJS
