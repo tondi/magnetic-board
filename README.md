@@ -1,10 +1,10 @@
 # magnetic-board
 
-An AngularJS todoMVC-like project, with free space
+AngularJS ES6 public access information-sharing notice board
 
-Front-layer
+Built with
 - AngularJS
-
-Back-layer
 - PHP
 - MySQL
+
+Small API used in this project can be found in [this](https://github.com/tondi/magnetic-board-server) repository
